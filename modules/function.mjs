@@ -22,13 +22,13 @@ const loadTasks = () => {
             tasksSection.innerHTML += `
             <div class="task-row">
                 <input type="checkbox" class="status">
-                <p>${task.task}</p>
+                <input type='text' readonly='readonly' value='${task.task}'>
                 <div class="buttons">
-                    <button class="edit-btn">
-                        <i class="fa-regular fa-pen-to-square"></i>
+                    <button class="edit-btn" >
+                        <i class="edit-btn fa-regular fa-pen-to-square" data-id="${task.id}"></i>
                     </button>
                     <button class="remove-btn" >
-                        <i data-id="${task.id}" class="remove-btn fa-solid fa-delete-left"></i>
+                        <i class="remove-btn fa-solid fa-delete-left" data-id="${task.id}"></i>
                     </button>
                 </div>
             </div> 
@@ -49,12 +49,12 @@ const addTask = (e) => {
     tasksSection.innerHTML += `
     <div class="task-row">
         <input type="checkbox" class="status">
-        <p>${newTask.task}</p>
+        <input type='text' readonly='readonly' value='${newTask.task}'>
         <div class="buttons">
             <button class="edit-btn">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <i data-id=${newTask.id} class="fa-regular fa-pen-to-square"></i>
             </button>
-            <button class="remove-btn">
+            <button  class="remove-btn">
                 <i data-id=${newTask.id} class="fa-solid fa-delete-left"></i>
             </button>
         </div>
