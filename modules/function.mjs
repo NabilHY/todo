@@ -13,7 +13,6 @@ class Task {
 
 // Implement a function for adding a new task (add a new element to the array).
 // 1. Create a function that loads items from local storage
-
 const loadTasks = () => {
   if (localStorage.getItem('tasks') !== null) {
     const storageTasks = JSON.parse(localStorage.getItem('tasks'));
@@ -50,10 +49,10 @@ const addTask = (e) => {
         <input type='text' readonly='readonly' value='${newTask.task}'>
         <div class="buttons">
             <button class="edit-btn">
-                <i data-id=${newTask.id} class="fa-regular fa-pen-to-square"></i>
+                <i class="edit-btn fa-regular fa-pen-to-square" data-id=${newTask.id}></i>
             </button>
-            <button  class="remove-btn">
-                <i data-id=${newTask.id} class="fa-solid fa-delete-left"></i>
+            <button class="remove-btn">
+                <i class="remove-btn fa-solid fa-delete-left" data-id=${newTask.id}></i>
             </button>
         </div>
     </div> 
